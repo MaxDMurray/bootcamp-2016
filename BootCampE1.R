@@ -41,3 +41,8 @@ for(ii in 1:9){if(ii=9){cat("\n")} else{cat(ii, "\*")}
   # what happened here was that when ii==9 i printed a *, when it was anything else i printed a blank
   
   
+  # Exercise 2
+ii==1:10
+for(ii in 1:10){cat("\n*")}
+for(ii in 1:10){cat("*")}
+  for(ii in 1:10){cat("*&")}
