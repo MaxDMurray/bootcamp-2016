@@ -27,7 +27,7 @@ for(ii in 1:9){cat("\n")}{
 }
 
 
-for(ii in 1:9){cat("\n")
+for(ii in 1:9){cat("\n")}
 for(ii in 1:9){cat("\n")}
   
   
@@ -189,16 +189,16 @@ deductions = house + food + fun
 
 
 for(j in 1:5){
-  for(i in 1:length(bankAccounts)){
-    bankAccounts[i]<-(bankAccounts[i]+income[i]-deductions[i])
+  for(i in 1:length(bankAccounts)){bankAccounts[i]<-(bankAccounts[i]+income[i]-deductions[i])
     bankAccounts[i]<-(bankAccounts[i]*interestRate+bankAccounts[i])
   }
 }
 
 
 
-cat(bankAccounts)
 #the values in bankAccounts are now different in the lists. 
+
+##cat(bankAccounts) before and after to easily see the difference 
 #this reflects the compounded interest
 
 
@@ -212,8 +212,9 @@ cat(bankAccounts)
 interestRate <- 0.0525
 house <- c(4.8, 3.8, 5.7); 
 food<- c(3.5, 4.3, 5.0); 
-fun <- c(7.8, 2.1, 10.5); 
-
+fun <- c(7.8, 2.1, 10.5);
+deductions <- house + food + fun
+bankAccounts <- c(0,0,0)
 #and incomes (through TAships) of 
 
 income <- c(21, 21, 21);
@@ -223,16 +224,14 @@ income <- c(21, 21, 21);
 
 
 
+for(j in 15:20){
+  for(i in 1:length(bankAccounts)){if(j %% 2==1){
+      if(i %% 2==1){bankAccounts[i] <- bankAccounts[i] + 5000}}
+  bankAccounts[i] <- bankAccounts[i] + income[i] - deductions[i]
+  bankAccounts[i] <- bankAccounts[i] + interestRate*bankAccounts[i]}
+}
 
-
-
-
-
-
-
-
-
-
+# like before "cat" or "print" to see the changes 
 
 
 
